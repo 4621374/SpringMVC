@@ -13,8 +13,8 @@ public class App {
 		ClassPathXmlApplicationContext applicationContext=new ClassPathXmlApplicationContext("aop.xml");
 		ItemDAO itemDAO =(ItemDAO) applicationContext.getBean("itemDAO");
 		//ProxyFactory proxyFactory =(ProxyFactory) applicationContext.getBean("proxyFactory");
-		proxy=new ProxyFactory(itemDAO)applicationContext;
-		proxy.sa
+		InterfaceItemDao proxy=(InterfaceItemDao) applicationContext.getBean("proxy");
+		proxy.save();
 //		ItemDAO itemDAO =(ItemDAO) applicationContext.getBean("itemDAO");
 //		itemDAO.save();
 		

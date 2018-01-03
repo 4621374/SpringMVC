@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Component
 
 public class ItemDAO implements InterfaceItemDao{
-	@Resource
+	//@Resource
 	//private MyAop aop;
 
 

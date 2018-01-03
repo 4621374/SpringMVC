@@ -7,14 +7,13 @@ import java.lang.reflect.Proxy;
 import org.springframework.stereotype.Component;
 @Component
 public class ProxyFactory {
-    private Object target;
-    private MyAop aop;
+    private static Object target;
+    private static MyAop aop;
 
-	public ProxyFactory(Object target) {
-		super();
-		this.target = target;
-	}
-	static Object getProxyInstance() {
+	
+	public static Object getProxyInstance(Object _target,MyAop _myAop) {
+		aop=_myAop;
+		target=_target;
 		return Proxy.newProxyInstance(
 				target.getClass().getClassLoader(),
 				target.getClass().getInterfaces(),
