@@ -15,8 +15,7 @@ public class App {
 		//ProxyFactory proxyFactory =(ProxyFactory) applicationContext.getBean("proxyFactory");
 		InterfaceItemDao proxy=(InterfaceItemDao) applicationContext.getBean("proxy");
 		proxy.save();
-//		ItemDAO itemDAO =(ItemDAO) applicationContext.getBean("itemDAO");
-//		itemDAO.save();
+
 		
 		
 
