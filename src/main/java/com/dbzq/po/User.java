@@ -1,17 +1,20 @@
 package com.dbzq.po;
 
 public class User {
-	private String name;
+	private String username;
 	private int age;
 	private int id;
 	public User(String name, int age) {
 		super();
-		this.name = name;
+		this.username = name;
 		this.age = age;
+	}
+	public User() {
+		super();
 	}
 	public User(String name, int age, int id) {
 		super();
-		this.name = name;
+		this.username = name;
 		this.age = age;
 		this.id = id;
 	}
@@ -22,10 +25,14 @@ public class User {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return username;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.username = name;
+	}
+	@Override
+	public String toString() {
+		return "User [name=" + username + ", age=" + age + ", id=" + id + "]";
 	}
 	public int getAge() {
 		return age;

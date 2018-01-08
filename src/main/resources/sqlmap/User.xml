@@ -4,5 +4,10 @@
     <select id="findUserById" parameterType="int" resultType="com.dbzq.po.User">
       select * from users where id=#{id}
     </select>
-	
+	<select id="findUserByName" parameterType="string" resultType="com.dbzq.po.User">
+      select * from users where username=#{username}
+    </select>
+    <select id="findUserByName2" parameterType="string" resultType="com.dbzq.po.User">
+      select * from users where username like '%${value}%'
+    </select>
 </mapper>
