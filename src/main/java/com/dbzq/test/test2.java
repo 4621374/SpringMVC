@@ -1,27 +1,23 @@
 package com.dbzq.test;
 
-import static org.junit.Assert.*;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
-import java.util.stream.Stream;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 
 import com.dbzq.po.User;
+import com.zxj.mapper.UserMapper;
 
-import org.apache.ibatis.io.Resources;
-
-public class Test {
+public class test2 {
 	SqlSessionFactory sqlSessionFactory=null;
 	@Before
 	public void InitBinder() throws IOException {
 		//this.getClass().getClassLoader().getResourceAsStream("stencilset.json");
-		InputStream inputStream=Resources.getResourceAsStream("SqlMapConfig.xml");
+		InputStream inputStream=Resources.getResourceAsStream("SqlMapConfig2.xml");
 		sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
 		
 	}
@@ -30,16 +26,13 @@ public class Test {
 	@org.junit.Test
 	public void test() {
 		SqlSession sqlSession=sqlSessionFactory.openSession();
-		//User user=(User)sqlSession.selectOne("findUserById",1);
-		//List<User> users=sqlSession.selectList("findUserByName2","te");
-		//sqlSession.delete("deleteUser",2);
-		User user=new User("wangwu3",32,3);
-		sqlSession.insert("addUser",user);
-		//sqlSession.update("updateUser", user);
-		sqlSession.commit();
+		UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
+		System.out.println(userMapper.toString());	
+		User user=userMapper.findUserById(3);
+		
+	
 		sqlSession.close();
 		//for (User user:users)
 		System.out.println(user.toString());
 	}
-
 }
