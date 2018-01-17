@@ -7,8 +7,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 </properties>
 <typeAliases>
-<typeAlias alias="user" type="com.dbzq.po.User" />
-<!--<package name="com.dbzq.po"/>-->
+
+<package name="com.dbzq.po"/>
 </typeAliases>
    <environments default="mysql">
       <environment id="mysql">
@@ -24,8 +24,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  </environments>
 
 <mappers>
-<mapper resource="sqlmap/UserMapper.xml"/>
- 
+<!--<mapper resource="sqlmap/UserMapper.xml"/>-->
+  <package name="com.zxj.mapper"/>
 
 
 </mappers>	

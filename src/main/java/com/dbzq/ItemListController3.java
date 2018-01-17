@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+
 
 import com.dbzq.po.Item;
-
-public class ItemListController implements Controller {
-	
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+@Controller
+public class ItemListController3   {
+	@RequestMapping("/handleRequest.action")
+	public ModelAndView handleRequest() throws Exception {
 		// TODO Auto-generated method stub
 		ArrayList<Item> itemlist=new ArrayList<Item>();
 		Item item1=new Item();

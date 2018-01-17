@@ -3,7 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
 <configuration>
+<properties resource="db.properties">
 
+</properties>
+<typeAliases>
+<typeAlias alias="user" type="com.dbzq.po.User" />
+<!--<package name="com.dbzq.po"/>-->
+</typeAliases>
    <environments default="mysql">
       <environment id="mysql">
       <transactionManager type="JDBC"/>
@@ -18,8 +24,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  </environments>
 
 <mappers>
-  <mapper resource="sqlmap/User.xml"/>
-  
+<!-- <mapper resource="com/zxj/mapper/UserMapper.xml"/>-->
+ <package name="com.zxj.mapper"/>
+ <!--<mapper class="com.zxj.mapper.UserMapper"/>-->
 
 </mappers>	
 	
