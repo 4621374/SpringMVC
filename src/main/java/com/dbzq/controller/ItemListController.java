@@ -1,24 +1,17 @@
-package com.dbzq;
-import java.io.IOException;
+package com.dbzq.controller;
 import java.util.ArrayList;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import com.dbzq.po.Item;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
-
-public class ItemListController2 implements HttpRequestHandler {
-
-	@Override
-	public void handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
+public class ItemListController implements Controller {
+	
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		ArrayList<Item> itemlist=new ArrayList<Item>();
 		Item item1=new Item();
@@ -31,12 +24,12 @@ public class ItemListController2 implements HttpRequestHandler {
 		item2.setDetail("�������e740");
 		itemlist.add(item1);
 		itemlist.add(item2);
-			
+		ModelAndView model1=new ModelAndView();
 	
-		arg0.setAttribute("items", itemlist);
-		arg0.getRequestDispatcher("WEB-INF/JSP/ItemList.jsp").forward(arg0, arg1);
+		model1.addObject("items",itemlist);
+		model1.setViewName("WEB-INF/JSP/ItemList.jsp");
+		return model1;
+		
 	}
-	
-
 
 }

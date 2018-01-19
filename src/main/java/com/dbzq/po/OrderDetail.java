@@ -4,6 +4,13 @@ public class OrderDetail {
    private int id;
    private int orders_id;
    private int items_id;
+   private Items items;
+public Items getItems() {
+	return items;
+}
+public void setItem(Items items) {
+	this.items = items;
+}
 public int getId() {
 	return id;
 }

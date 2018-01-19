@@ -1,4 +1,4 @@
-package com.dbzq;
+package com.dbzq.controller;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;

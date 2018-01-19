@@ -7,14 +7,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
    
-      <!-- 配置处理器） -->
-    <bean id="itemlistController" name="/item.action" class="com.dbzq.ItemListController">    
-    </bean>
-     <bean id="itemlistController2" class="com.dbzq.ItemListController2">    
-    </bean>
-    <bean  class="com.dbzq.ItemListController3">    
-    </bean>
-    <context:component-scan base-package="com.dbzq.controller"></context:component-scan>
+    <context:component-scan base-package="com.dbzq"></context:component-scan>
     
     <!-- 配置处理器映射器） -->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">                   
